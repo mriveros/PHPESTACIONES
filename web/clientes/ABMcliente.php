@@ -15,7 +15,7 @@ $catego=  $_SESSION["categoria_usuario"];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ONM- Clientes</title>
+    <title>ONM-Clientes</title>
     <!-- Bootstrap Core CSS -->
     <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
