@@ -201,18 +201,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa  fa-bar-chart-o"></i> ESTADISTICAS<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="buttons.html">Ranking de Terminados</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Ranking de trabajo por Mes</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
