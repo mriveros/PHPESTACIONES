@@ -123,17 +123,31 @@ $codusuario=  $_SESSION["codigo_usuario"];
                                             <th>Reprob.</th>
                                             <th>Claus.</th>
                                             <th>Fecha</th>
+                                            <th>Usuario</th>
                                             <th>Accion</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                     <?php
-                    $query = "select  reg.reg_cod,cli.cli_nom||' '||cli.cli_ape as cliente,cli.cli_dir,cli.cli_ciu,cli.cli_dpto,dis.dis_nom,reg.reg_cant,
-                    reg.reg_aprob,reg.reg_reprob,reg.reg_claus,to_char(reg.reg_fecha,'DD/MM/YYYY') as fecha
-                    from registros reg, clientes cli, distribuidor dis 
-                    where reg.cli_cod=cli.cli_cod
-                    and reg.dis_cod=dis.dis_cod and reg.usu_cod=$codusuario";
+                     if ($catego==1){
+                         $query = "select  reg.reg_cod,cli.cli_nom||' '||cli.cli_ape as cliente,cli.cli_dir,cli.cli_ciu,cli.cli_dpto,dis.dis_nom,reg.reg_cant,
+                            reg.reg_aprob,reg.reg_reprob,reg.reg_claus,to_char(reg.reg_fecha,'DD/MM/YYYY') as fecha,
+                            usu.usu_nom ||' '||usu.usu_ape as usuario
+                            from registros reg, clientes cli, distribuidor dis,usuarios usu
+                            where reg.cli_cod=cli.cli_cod
+                            and usu.usu_cod=reg.usu_cod
+                            and reg.dis_cod=dis.dis_cod";
+                    }else{
+                            $query = "select  reg.reg_cod,cli.cli_nom||' '||cli.cli_ape as cliente,cli.cli_dir,cli.cli_ciu,cli.cli_dpto,dis.dis_nom,reg.reg_cant,
+                            reg.reg_aprob,reg.reg_reprob,reg.reg_claus,to_char(reg.reg_fecha,'DD/MM/YYYY') as fecha,
+                            usu.usu_nom ||' '||usu.usu_ape as usuario
+                            from registros reg, clientes cli, distribuidor dis,usuarios usu
+                            where reg.cli_cod=cli.cli_cod
+                            and usu.usu_cod=reg.usu_cod
+                            and reg.dis_cod=dis.dis_cod and reg.usu_cod=$codusuario";
+
+                    }
                     $result = pg_query($query) or die ("Error al realizar la consulta");
                     while($row1 = pg_fetch_array($result))
                     {
@@ -147,6 +161,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                         echo "<td>".$row1["reg_aprob"]."</td>";
                         echo "<td>".$row1["reg_reprob"]."</td>";
                         echo "<td>".$row1["reg_claus"]."</td>";
+                        echo "<td>".$row1["usuario"]."</td>";
                         echo "<td>".$row1["fecha"]."</td>";
                         echo "<td>";?>
                         <a onclick='eliminar(<?php echo $row1["reg_cod"];?>)' class="btn btn-danger btn-xs active" data-toggle="modal" data-target="#modalbor" role="button">Borrar</a>

@@ -186,18 +186,29 @@
                         
 
                         <li>
-                            <a href="#"><i class="fa  fa-file-text "></i> INFORMES<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa  fa-file-text "></i>INFORMES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Resumen en Entrada</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmRegistrosFecha.php">Resumen Registros por mes</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Resumen en Calibracion</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmClientesFecha.php">Resumen Registros por Cliente-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Resumen de Terminados</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmDepartamentoFecha.php">Resumen por Departamentos-Fecha</a>
                                 </li>
-                                 
+                                <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Resumen por Usuarios-Fecha</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Ranking de Clausurados por mes</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Ranking de Clausurados por Clientes</a>
+                                </li>
+                                 <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Ranking de Clausurados por Departamento</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
