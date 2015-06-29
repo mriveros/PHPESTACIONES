@@ -44,7 +44,7 @@ function Header()
     $this->Ln(30);
 	$this->SetDrawColor(0,0,0);
 	$this->SetLineWidth(.2);
-	$this->Line(230,40,10,40);//largor,ubicacion derecha,inicio,ubicacion izquierda
+	$this->Line(200,40,10,40);//largor,ubicacion derecha,inicio,ubicacion izquierda
     //------------------------RECIBIMOS LOS VALORES DE POST-----------
     if  (empty($_POST['txtDepartamento'])){$departamento='';}else{ $departamento = $_POST['txtDepartamento'];}
     if  (empty($_POST['txtDesdeFecha'])){$desde='';}else{ $desde= $_POST['txtDesdeFecha'];}
@@ -54,7 +54,8 @@ function Header()
     //table header CABECERA        
     $this->SetFont('Arial','B',12);
     $this->SetTitle('Clientes-Estaciones');
-    $this->text(55,50,'CONTROL DE ESTACIONES DE SERVICIOS');
+    $this->text(55,45,'CONTROL DE ESTACIONES DE SERVICIOS');
+    $this->text(58,50,'Ranking de Registros por Departamento');
     $this->text(10,65,'DEPARTAMENTO:');//Titulo
     $this->text(55,65,  utf8_decode($departamento));
     $this->text(10,75,'DESDE FECHA:');
@@ -79,12 +80,11 @@ $pdf->SetTextColor(0);
     
 //----------------------------Build table---------------------------------------
 $pdf->SetXY(10,100);
-$pdf->Cell(25,10,'Cantidad',1,0,'C',50);
-$pdf->Cell(25,10,'Aprobados',1,0,'C',50);
-$pdf->Cell(25,10,'Reprobados',1,0,'C',50);
-$pdf->Cell(25,10,'Clausurados',1,0,'C',50);
-$pdf->Cell(50,10,'Usuario',1,0,'C',50);
-$pdf->Cell(30,10,'Fecha Registro',1,1,'C',50);
+$pdf->Cell(40,10,'Cantidad',1,0,'C',50);
+$pdf->Cell(40,10,'Aprobados',1,0,'C',50);
+$pdf->Cell(40,10,'Reprobados',1,0,'C',50);
+$pdf->Cell(40,10,'Clausurados',1,1,'C',50);
+
 $fill=false;
 $i=0;
 $pdf->SetFont('Arial','',10);
@@ -92,15 +92,14 @@ $pdf->SetFont('Arial','',10);
 //------------------------QUERY and data cargue y se reciben los datos-----------
 $conectate=pg_connect("host=localhost port=5434 dbname=ESTACIONES user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
-$consulta=pg_exec($conectate,"select reg.reg_cant,reg.reg_aprob, reg.reg_reprob, 
-reg.reg_reprob,reg.reg_claus,usu.usu_nom||' '||usu.usu_ape as usuario,
-to_char(reg.reg_fecha,'DD/MM/YYYY') as reg_fecha
+$consulta=pg_exec($conectate,"select sum(reg.reg_cant) as reg_cant,sum(reg.reg_aprob) as reg_aprob, sum(reg.reg_reprob)as reg_reprob, 
+sum(reg.reg_claus)as reg_claus
 from registros reg,usuarios usu,clientes cli 
 where reg.cli_cod=cli.cli_cod 
 and reg.usu_cod=usu.usu_cod 
 and cli.cli_dpto='$departamento' 
 and reg.reg_fecha >=  '$desde'
-and reg.reg_fecha <= '$hasta' order by reg_fecha");
+and reg.reg_fecha <= '$hasta'");
 $numregs=pg_numrows($consulta);
 while($i<$numregs)
 {   
@@ -108,14 +107,10 @@ while($i<$numregs)
     $aproba=pg_result($consulta,$i,'reg_aprob');
     $reprob=pg_result($consulta,$i,'reg_reprob');
     $claus=pg_result($consulta,$i,'reg_claus');
-    $usuario=pg_result($consulta,$i,'usuario');
-    $fecha=pg_result($consulta,$i,'reg_fecha');
-    $pdf->Cell(25,5,$cantidad,1,0,'C',$fill);
-    $pdf->Cell(25,5,$aproba,1,0,'C',$fill);
-    $pdf->Cell(25,5,$reprob,1,0,'C',$fill);
-    $pdf->Cell(25,5,$claus,1,0,'C',$fill);
-    $pdf->Cell(50,5,$usuario,1,0,'L',$fill);
-    $pdf->Cell(30,5,$fecha,1,1,'C',$fill);
+    $pdf->Cell(40,5,$cantidad,1,0,'C',$fill);
+    $pdf->Cell(40,5,$aproba,1,0,'C',$fill);
+    $pdf->Cell(40,5,$reprob,1,0,'C',$fill);
+    $pdf->Cell(40,5,$claus,1,1,'C',$fill);
     $fill=!$fill;
     $i++;
 }

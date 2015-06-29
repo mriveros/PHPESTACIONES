@@ -46,17 +46,19 @@ function Header()
 	$this->SetLineWidth(.2);
 	$this->Line(230,40,10,40);//largor,ubicacion derecha,inicio,ubicacion izquierda
     //------------------------RECIBIMOS LOS VALORES DE POST-----------
-    if  (empty($_POST['txtDepartamento'])){$departamento='';}else{ $departamento = $_POST['txtDepartamento'];}
+    if  (empty($_POST['txtDistribuidor'])){$coddistribuidor='';}else{ $coddistribuidor = $_POST['txtDistribuidor'];}
     if  (empty($_POST['txtDesdeFecha'])){$desde='';}else{ $desde= $_POST['txtDesdeFecha'];}
     if  (empty($_POST['txtHastaFecha'])){$hasta='';}else{ $hasta= $_POST['txtHastaFecha'];}
     $conectate=pg_connect("host=localhost port=5434 dbname=ESTACIONES user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
+    $consulta=pg_exec($conectate,"select dis_nom as distribuidor from distribuidor where dis_cod=$coddistribuidor");
+    $distribuidor=pg_result($consulta,0,'distribuidor');
     //table header CABECERA        
     $this->SetFont('Arial','B',12);
     $this->SetTitle('Clientes-Estaciones');
     $this->text(55,50,'CONTROL DE ESTACIONES DE SERVICIOS');
-    $this->text(10,65,'DEPARTAMENTO:');//Titulo
-    $this->text(55,65,  utf8_decode($departamento));
+    $this->text(10,65,'DISTRIBUIDOR:');//Titulo
+    $this->text(50,65,$distribuidor);
     $this->text(10,75,'DESDE FECHA:');
     $this->text(45,75,$desde);
     $this->text(10,85,'HASTA FECHA:');
@@ -67,7 +69,7 @@ function Header()
 $pdf= new PDF();//'P'=vertical o 'L'=horizontal,'mm','A4' o 'Legal'
 $pdf->AddPage();
 //------------------------RECIBIMOS LOS VALORES DE POST-----------
-    if  (empty($_POST['txtDepartamento'])){$departamento='';}else{ $departamento = $_POST['txtDepartamento'];}
+    if  (empty($_POST['txtDistribuidor'])){$coddistribuidor='';}else{ $coddistribuidor = $_POST['txtDistribuidor'];}
     if  (empty($_POST['txtDesdeFecha'])){$desde='';}else{ $desde= $_POST['txtDesdeFecha'];}
     if  (empty($_POST['txtHastaFecha'])){$hasta='';}else{ $hasta= $_POST['txtHastaFecha'];}
     
@@ -95,10 +97,11 @@ $conectate=pg_connect("host=localhost port=5434 dbname=ESTACIONES user=postgres 
 $consulta=pg_exec($conectate,"select reg.reg_cant,reg.reg_aprob, reg.reg_reprob, 
 reg.reg_reprob,reg.reg_claus,usu.usu_nom||' '||usu.usu_ape as usuario,
 to_char(reg.reg_fecha,'DD/MM/YYYY') as reg_fecha
-from registros reg,usuarios usu,clientes cli 
-where reg.cli_cod=cli.cli_cod 
+from registros reg,usuarios usu,clientes cli,distribuidor dis 
+where reg.cli_cod=cli.cli_cod
+and reg.dis_cod=dis.dis_cod
 and reg.usu_cod=usu.usu_cod 
-and cli.cli_dpto='$departamento' 
+and dis.dis_cod=$coddistribuidor 
 and reg.reg_fecha >=  '$desde'
 and reg.reg_fecha <= '$hasta' order by reg_fecha");
 $numregs=pg_numrows($consulta);
@@ -111,11 +114,11 @@ while($i<$numregs)
     $usuario=pg_result($consulta,$i,'usuario');
     $fecha=pg_result($consulta,$i,'reg_fecha');
     $pdf->Cell(25,5,$cantidad,1,0,'C',$fill);
-    $pdf->Cell(25,5,$aproba,1,0,'C',$fill);
-    $pdf->Cell(25,5,$reprob,1,0,'C',$fill);
-    $pdf->Cell(25,5,$claus,1,0,'C',$fill);
+    $pdf->Cell(25,5,$aproba,1,0,'L',$fill);
+    $pdf->Cell(25,5,$reprob,1,0,'L',$fill);
+    $pdf->Cell(25,5,$claus,1,0,'L',$fill);
     $pdf->Cell(50,5,$usuario,1,0,'L',$fill);
-    $pdf->Cell(30,5,$fecha,1,1,'C',$fill);
+    $pdf->Cell(30,5,$fecha,1,1,'L',$fill);
     $fill=!$fill;
     $i++;
 }

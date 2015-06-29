@@ -194,20 +194,23 @@
                                 <li>
                                     <a href="http://localhost/app/PHPESTACIONES/web/informes/frmClientesFecha.php">Resumen Registros por Cliente-Fecha</a>
                                 </li>
+                                 <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmDistribuidorFecha.php">Resumen Registros por Distribuidor</a>
+                                </li>
                                 <li>
                                     <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmDepartamentoFecha.php">Resumen por Departamentos-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Resumen por Usuarios-Fecha</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmUsuariosFecha.php">Resumen por Usuarios-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Ranking de Clausurados por mes</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingRegistrosFecha.php">Ranking Registros por mes</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Ranking de Clausurados por Clientes</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingClientesFecha.php">Ranking Registros por Clientes</a>
                                 </li>
                                  <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmClientesFecha.php">Ranking de Clausurados por Departamento</a>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingDepartamentoFecha.php">Ranking Registros por Departamento</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

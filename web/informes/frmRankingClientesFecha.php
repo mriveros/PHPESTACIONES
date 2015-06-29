@@ -74,7 +74,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Informes Registro de Estaciones
+                            Ranking Registros por Clientes
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -84,12 +84,12 @@ $codusuario=  $_SESSION["codigo_usuario"];
 				<!-- Modal Header -->
 				<div class="modal-header"><button type="button" class="close" data-dismiss="modal">
 					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h3 class="modal-title" id="myModalLabel"><i class="fa fa-archive"></i> Registros Clientes por Fecha</h3>
+					<h3 class="modal-title" id="myModalLabel"><i class="fa fa-archive"></i> Ranking Registros por Cliente</h3>
 				</div>
             
 				<!-- Modal Body -->
 				<div class="modal-body">
-                                    <form  autocomplete="off" class="form-horizontal" name="agregarform" action="InfClientesFecha.php" method="post" role="form">
+                                    <form  autocomplete="off" class="form-horizontal" name="agregarform" action="rankingClientesFecha.php" method="post" role="form">
 						
                                        
                                         <div class="form-group">

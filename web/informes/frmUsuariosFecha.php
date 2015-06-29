@@ -84,22 +84,22 @@ $codusuario=  $_SESSION["codigo_usuario"];
 				<!-- Modal Header -->
 				<div class="modal-header"><button type="button" class="close" data-dismiss="modal">
 					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h3 class="modal-title" id="myModalLabel"><i class="fa fa-archive"></i> Registros Clientes por Fecha</h3>
+					<h3 class="modal-title" id="myModalLabel"><i class="fa fa-archive"></i> Reporte Usuarios por Fecha</h3>
 				</div>
             
 				<!-- Modal Body -->
 				<div class="modal-body">
-                                    <form  autocomplete="off" class="form-horizontal" name="agregarform" action="InfClientesFecha.php" method="post" role="form">
+                                    <form  autocomplete="off" class="form-horizontal" name="agregarform" action="InfUsuariosFecha.php" method="post" role="form">
 						
                                        
                                         <div class="form-group">
-                                            <label  class="col-sm-2 control-label" for="input01">Cliente</label>
+                                            <label  class="col-sm-2 control-label" for="input01">Usuario</label>
                                             <div class="col-sm-10">
-                                           <select name="txtClienteA" class="form-control" id="txtClienteA" required>
+                                           <select name="txtUsuario" class="form-control" id="txtUsuario" required>
                                                 <?php
                                                 //esto es para mostrar un select que trae datos de la BDD
                                                 conexionlocal();
-                                                $query = "Select cli_cod,cli_nom||' '||cli_ape  from clientes where estado='t' ";
+                                                $query = "Select usu_cod,usu_nom||' '||usu_ape  from usuarios where estado='t' ";
                                                 $resultadoSelect = pg_query($query);
                                                 while ($row = pg_fetch_row($resultadoSelect)) {
                                                 echo "<option value=".$row[0].">";

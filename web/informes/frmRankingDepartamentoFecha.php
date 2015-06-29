@@ -74,7 +74,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Informes Registro de Estaciones
+                            Ranking Registro de Estaciones
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -84,29 +84,33 @@ $codusuario=  $_SESSION["codigo_usuario"];
 				<!-- Modal Header -->
 				<div class="modal-header"><button type="button" class="close" data-dismiss="modal">
 					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h3 class="modal-title" id="myModalLabel"><i class="fa fa-archive"></i> Registros Clientes por Fecha</h3>
+					<h3 class="modal-title" id="myModalLabel"><i class="fa fa-archive"></i>Ranking de Registros por Departamentos</h3>
 				</div>
             
 				<!-- Modal Body -->
 				<div class="modal-body">
-                                    <form  autocomplete="off" class="form-horizontal" name="agregarform" action="InfClientesFecha.php" method="post" role="form">
-						
-                                       
+                                    <form  autocomplete="off" class="form-horizontal" name="agregarform" action="rankingDepartamentoFecha.php" method="post" role="form">
                                         <div class="form-group">
-                                            <label  class="col-sm-2 control-label" for="input01">Cliente</label>
+                                            <label  class="col-sm-2 control-label" for="input01">Departamento</label>
                                             <div class="col-sm-10">
-                                           <select name="txtClienteA" class="form-control" id="txtClienteA" required>
-                                                <?php
-                                                //esto es para mostrar un select que trae datos de la BDD
-                                                conexionlocal();
-                                                $query = "Select cli_cod,cli_nom||' '||cli_ape  from clientes where estado='t' ";
-                                                $resultadoSelect = pg_query($query);
-                                                while ($row = pg_fetch_row($resultadoSelect)) {
-                                                echo "<option value=".$row[0].">";
-                                                echo $row[1];
-                                                echo "</option>";
-                                                }
-                                                ?>
+                                           <select name="txtDepartamento" class="form-control" id="txtDepartamento" required>
+                                               <option>Concepcion</option>
+                                               <option>San Pedro</option>
+                                               <option>Cordillera</option>
+                                               <option>Guairá</option>
+                                               <option>Caaguazú</option>
+                                               <option>Caazapá</option>
+                                               <option>Itapúa</option>
+                                               <option>Misiones</option>
+                                               <option>Paraguarí</option>
+                                               <option>Alto Paraná</option>
+                                               <option>Central</option>
+                                               <option>Ñeembucú</option>
+                                               <option>Amambay</option>
+                                               <option>Canindeyú</option>
+                                               <option>Presidente Hayes</option>
+                                               <option>Alto Paraguay</option>
+                                               <option>Boquerón</option>
                                              </select>
                                             </div>
 					</div>
