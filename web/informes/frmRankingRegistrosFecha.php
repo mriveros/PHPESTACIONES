@@ -57,7 +57,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
              include("../menu.php");
         }elseif($catego==2){
              include("../menu_usuario.php");
-        }elseif($catego==2){
+        }elseif($catego==3){
              include("../menu_supervisor.php");
         }
         conexionlocal();

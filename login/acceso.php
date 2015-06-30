@@ -32,6 +32,7 @@ $pwd=$_REQUEST['clave'];
 	}
 	else
 	{
+            $_SESSION["username"] = $row['usu_username'];
             $_SESSION["nombre_usuario"] = $row['usu_nom'];
             $_SESSION["codigo_usuario"] = $row['usu_cod'];
             $_SESSION["categoria_usuario"] = $row['cat_cod'];

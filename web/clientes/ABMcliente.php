@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION['codigo_usuario']))
 header("Location:http://localhost/app/PHPESTACIONES/login/acceso.html");
 $catego=  $_SESSION["categoria_usuario"];
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -94,7 +95,7 @@ $catego=  $_SESSION["categoria_usuario"];
              include("../menu.php");
         }elseif($catego==2){
              include("../menu_usuario.php");
-        }elseif($catego==2){
+        }elseif($catego==3){
              include("../menu_supervisor.php");
         }
        

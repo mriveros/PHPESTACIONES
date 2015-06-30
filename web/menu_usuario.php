@@ -146,6 +146,26 @@
                             <a href="#" value="Load new document" onclick="pageprinci()"><i class="fa fa-dashboard fa-fw"></i>Menu Principal</a>
                         </li>
                         <li>
+                            <a href="#"><i class="fa  fa-users"></i> CLIENTES<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php"> Registros de Clientes</a>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa  fa-flask "></i>DISTRIBUIDORES<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php">Registros de Distribuidores</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-wrench "></i> REGISTROS ESTACIONES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -154,23 +174,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa  fa-file-text "></i> INFORMES<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Resumen en Entrada</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Resumen en Calibracion</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Resumen de Terminados</a>
-                                </li>
-                                 
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
