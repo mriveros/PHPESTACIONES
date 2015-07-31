@@ -40,10 +40,10 @@ $pwd=md5($_REQUEST['clave']);
                  header("Location:http://localhost/app/PHPESTACIONES/web/menu.php");
                  
             }else if($row['cat_cod']==2){
-                header("Location:http://localhost/app/PHPESTACIONES/web/menuusuario.php");
+                header("Location:http://localhost/app/PHPESTACIONES/web/menu_usuario.php");
                  
             
             }else if($row['cat_cod']==3){
-                 header("Location:http://localhost/app/PHPESTACIONES/web/menusupervisor.php");
+                 header("Location:http://localhost/app/PHPESTACIONES/web/menu_supervisor.php");
             }
         }
