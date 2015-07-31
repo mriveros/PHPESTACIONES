@@ -130,7 +130,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuracion</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="http://localhost/app/PHPESTACIONES/web/logout.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                        <li><a href="http://localhost/app/phpestaciones/web/logout.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -143,13 +143,13 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#" value="Load new document" onclick="pageprinci()"><i class="fa fa-dashboard fa-fw"></i>Menu Principal</a>
+                            <a href="#" value="Load new document" onclick="location.reload();"><i class="fa fa-dashboard fa-fw"></i>Menu Principal</a>
                         </li>
 			<li>
                             <a href="#"><i class="fa fa-user"></i> USUARIOS<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/usuarios/ABMusuario.php">Registros de Usuarios</a>
+                                    <a href="http://localhost/app/phpestaciones/web/usuarios/ABMusuario.php">Registros de Usuarios</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -158,7 +158,7 @@
                             <a href="#"><i class="fa  fa-users"></i> CLIENTES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php"> Registros de Clientes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/clientes/ABMcliente.php"> Registros de Clientes</a>
                                 </li>
                                 <li>
                                 </li>
@@ -169,7 +169,7 @@
                             <a href="#"><i class="fa  fa-flask "></i>DISTRIBUIDORES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php">Registros de Distribuidores</a>
+                                    <a href="http://localhost/app/phpestaciones/web/distribuidores/ABMdistribuidor.php">Registros de Distribuidores</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -178,7 +178,7 @@
                             <a href="#"><i class="fa fa-wrench "></i> REGISTROS ESTACIONES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/estaciones/ABMregistro.php"> Registro de Estaciones</a>
+                                    <a href="http://localhost/app/phpestaciones/web/estaciones/ABMregistro.php"> Registro de Estaciones</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -189,33 +189,41 @@
                             <a href="#"><i class="fa  fa-file-text "></i>INFORMES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmRegistrosFecha.php">Resumen Registros por mes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRegistrosFecha.php">Resumen Registros por mes</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmClientesFecha.php">Resumen Registros por Cliente-Fecha</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmClientesFecha.php">Resumen Registros por Cliente-Fecha</a>
                                 </li>
                                  <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmDistribuidorFecha.php">Resumen Registros por Distribuidor</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmDistribuidorFecha.php">Resumen Registros por Distribuidor</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmDepartamentoFecha.php">Resumen por Departamentos-Fecha</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmDepartamentoFecha.php">Resumen por Departamentos-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmUsuariosFecha.php">Resumen por Usuarios-Fecha</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmUsuariosFecha.php">Resumen por Usuarios-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingRegistrosFecha.php">Ranking Registros por mes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRankingRegistrosFecha.php">Ranking Registros por mes</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingClientesFecha.php">Ranking Registros por Clientes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRankingClientesFecha.php">Ranking Registros por Clientes</a>
                                 </li>
                                  <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingDepartamentoFecha.php">Ranking Registros por Departamento</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRankingDepartamentoFecha.php">Ranking Registros por Departamento</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
+                        <li>
+                            <a href="#"><i class=""></i> Help <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                
+                                    <a href="">Contacte con el Programador: mriveros@intn.gov.py</a>
+                              
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

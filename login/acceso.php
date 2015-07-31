@@ -5,12 +5,12 @@ session_start();
 /*
  * Autor: Marcos A. Riveros.
  * Año: 2015
- * Sistema de Precintos INTN
+ * Sistema de Estaciones ONM INTN
  */
  include '../web/funciones.php';
  conexionlocal();
 $usr= $_REQUEST['username'];
-$pwd=$_REQUEST['clave'];
+$pwd=md5($_REQUEST['clave']);
 //$pwd= md5($pwd); esto usaremos despues para comparar carga que se realizara en md5
 //session_start();
 //print_r($_REQUEST);
@@ -27,7 +27,7 @@ $pwd=$_REQUEST['clave'];
 	{
 		echo '<script type="text/javascript">
                          alert("Nombre de Usuario o Password no valido..!");
-			 window.location="http://localhost/app/PHPESTACIONES/login/acceso.html";
+			 window.location="http://localhost/app/phpestaciones/login/acceso.html";
                       </script>';
 	}
 	else
@@ -40,10 +40,10 @@ $pwd=$_REQUEST['clave'];
                  header("Location:http://localhost/app/PHPESTACIONES/web/menu.php");
                  
             }else if($row['cat_cod']==2){
-                 header("Location:http://localhost/app/PHPESTACIONES/web/menu_usuario.php");
+                header("Location:http://localhost/app/PHPESTACIONES/web/menuusuario.php");
                  
             
             }else if($row['cat_cod']==3){
-                 header("Location:http://localhost/app/PHPESTACIONES/web/menu_supervisor.php");
+                 header("Location:http://localhost/app/PHPESTACIONES/web/menusupervisor.php");
             }
         }

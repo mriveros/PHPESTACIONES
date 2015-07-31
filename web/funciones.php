@@ -3,7 +3,7 @@
 /*
  * Autor: Marcos A. Riveros.
  * Año: 2015
- * Sistema de Control ONM-INTN
+ * Sistema de Estaciones ONM INTN
  */
 -->
 
@@ -12,7 +12,7 @@
         //conecta al 192.168.56.100
         function conexionlocal()
         {
-            return $dbconn = pg_connect("host=localhost port=5434 dbname=ESTACIONES user=postgres password=postgres "
+            return $dbconn = pg_connect("host=localhost port=5434 dbname=estaciones user=postgres password=postgres "
                     . "")or die ('no se pudo conectar a la base de datos');
         } 
         //funcion que selecciona a la base de Datos

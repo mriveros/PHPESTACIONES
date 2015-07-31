@@ -28,7 +28,7 @@
             if(func_existeDatoDetalle($tecnicoA,$laboratorioA,'tecnicos_laboratorios','tec_cod', 'lab_cod','onmworkflow')==true){
                 echo '<script type="text/javascript">
 		alert("El Tecnico en el Laboratorio ya existe. Intente ingresar otro Tecnico o Laboratorio");
-                window.location="http://localhost/app/PHPESTACIONES/web/tecnicos_laboratorios/ABMtecniLab.php";
+                window.location="http://localhost/app/phpestaciones/web/tecnicos_laboratorios/ABMtecniLab.php";
 		</script>';
                 }else{              
                 //se define el Query   
@@ -37,7 +37,7 @@
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $query = '';
-                header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/tecnicos_laboratorios/ABMtecniLab.php");
+                header("Refresh:0; url=http://localhost/app/phpestaciones/web/tecnicos_laboratorios/ABMtecniLab.php");
                 }
             }
         //si es Modificar    
@@ -45,10 +45,10 @@
             
             pg_query("update tecnicos_laboratorios set tec_cod='$tecnicoM',lab_cod=$laboratorioM,estado='$estadoM' WHERE teclab_cod=$codigoModif");
             $query = '';
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/tecnicos_laboratorios/ABMtecniLab.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/tecnicos_laboratorios/ABMtecniLab.php");
         }
         //Si es Eliminar
         if(isset($_POST['borrar'])){
             pg_query("update tecnicos_laboratorios set estado='f' WHERE teclab_cod=$codigoElim");
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/tecnicos_laboratorios/ABMtecniLab.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/tecnicos_laboratorios/ABMtecniLab.php");
 	}

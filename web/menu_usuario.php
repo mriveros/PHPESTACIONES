@@ -130,7 +130,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuracion</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="http://localhost/app/PHPESTACIONES/web/logout.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                        <li><a href="http://localhost/app/phpestaciones/web/logout.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -149,7 +149,7 @@
                             <a href="#"><i class="fa  fa-users"></i> CLIENTES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php"> Registros de Clientes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/clientes/ABMcliente.php"> Registros de Clientes</a>
                                 </li>
                                 <li>
                                 </li>
@@ -160,7 +160,7 @@
                             <a href="#"><i class="fa  fa-flask "></i>DISTRIBUIDORES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php">Registros de Distribuidores</a>
+                                    <a href="http://localhost/app/phpestaciones/web/distribuidores/ABMdistribuidor.php">Registros de Distribuidores</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -169,7 +169,7 @@
                             <a href="#"><i class="fa fa-wrench "></i> REGISTROS ESTACIONES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/estaciones/ABMregistro.php"> Registro de Estaciones</a>
+                                    <a href="http://localhost/app/phpestaciones/web/estaciones/ABMregistro.php"> Registro de Estaciones</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

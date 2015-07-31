@@ -1,5 +1,5 @@
 <?php 
 	session_start(); 
 	session_destroy(); 
-	header('location: acceso.php'); 
+	header("Location:http://localhost/app/PHPESTACIONES/login/acceso.html");
 ?>

@@ -130,7 +130,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuracion</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="http://localhost/app/PHPESTACIONES/web/logout.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                        <li><a href="http://localhost/app/phpestaciones/web/logout.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -150,28 +150,28 @@
                             <a href="#"><i class="fa  fa-file-text "></i>INFORMES<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmRegistrosFecha.php">Resumen Registros por mes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/FrmRegistrosFecha.php">Resumen Registros por mes</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmClientesFecha.php">Resumen Registros por Cliente-Fecha</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmClientesFecha.php">Resumen Registros por Cliente-Fecha</a>
                                 </li>
                                  <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmDistribuidorFecha.php">Resumen Registros por Distribuidor</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmDistribuidorFecha.php">Resumen Registros por Distribuidor</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmDepartamentoFecha.php">Resumen por Departamentos-Fecha</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/FrmDepartamentoFecha.php">Resumen por Departamentos-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/FrmUsuariosFecha.php">Resumen por Usuarios-Fecha</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/FrmUsuariosFecha.php">Resumen por Usuarios-Fecha</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingRegistrosFecha.php">Ranking Registros por mes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRankingRegistrosFecha.php">Ranking Registros por mes</a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingClientesFecha.php">Ranking Registros por Clientes</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRankingClientesFecha.php">Ranking Registros por Clientes</a>
                                 </li>
                                  <li>
-                                    <a href="http://localhost/app/PHPESTACIONES/web/informes/frmRankingDepartamentoFecha.php">Ranking Registros por Departamento</a>
+                                    <a href="http://localhost/app/phpestaciones/web/informes/frmRankingDepartamentoFecha.php">Ranking Registros por Departamento</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

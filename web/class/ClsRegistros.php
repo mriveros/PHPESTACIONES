@@ -39,7 +39,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $query = '';
-                header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/estaciones/ABMregistro.php");
+                header("Refresh:0; url=http://localhost/app/phpestaciones/web/estaciones/ABMregistro.php");
                 
             }
         //si es Modificar    
@@ -47,10 +47,10 @@ $codusuario=  $_SESSION["codigo_usuario"];
             
             pg_query("update instrumentos set ins_nom='$nombreM',ins_des= '$descripcionM',lab_cod=$laboratorioM,estado='$estadoM' WHERE ins_cod=$codigoModif");
             $query = '';
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/estaciones/ABMregistro.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/estaciones/ABMregistro.php");
         }
         //Si es Eliminar
         if(isset($_POST['borrar'])){
             pg_query("delete from registros WHERE reg_cod=$codigoElim");
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/estaciones/ABMregistro.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/estaciones/ABMregistro.php");
 	}

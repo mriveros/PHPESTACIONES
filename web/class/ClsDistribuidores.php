@@ -30,7 +30,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
             if(func_existeDato($nombreA, 'distribuidor', 'dis_nom')==true){
                 echo '<script type="text/javascript">
 		alert("El Distribuidor ya existe. Intente ingresar otro Distribuidor");
-                window.location="http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php";
+                window.location="http://localhost/app/phpestaciones/web/distribuidores/ABMdistribuidor.php";
 		</script>';
                 }else{              
                 //se define el Query   
@@ -39,7 +39,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $query = '';
-                header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php");
+                header("Refresh:0; url=http://localhost/app/phpestaciones/web/distribuidores/ABMdistribuidor.php");
                 }
             }
         //si es Modificar    
@@ -47,10 +47,10 @@ $codusuario=  $_SESSION["codigo_usuario"];
             
             pg_query("update distribuidor set dis_nom='$nombreM',dis_obs= '$descripcionM',estado='$estadoM' WHERE dis_cod=$codigoModif");
             $query = '';
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/distribuidores/ABMdistribuidor.php");
         }
         //Si es Eliminar
         if(isset($_POST['borrar'])){
             pg_query("update distribuidor set estado='f' WHERE dis_cod=$codigoElim");
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/distribuidores/ABMdistribuidor.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/distribuidores/ABMdistribuidor.php");
 	}

@@ -42,7 +42,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
             if(func_existeDato($rucA, 'clientes', 'cli_ruc')==true){
                 echo '<script type="text/javascript">
 		alert("El Cliente ya existe. Intente ingresar otro Cliente");
-                window.location="http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php";
+                window.location="http://localhost/app/phpestaciones/web/clientes/ABMcliente.php";
 		</script>';
                 }else{              
                 //se define el Query   
@@ -51,7 +51,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $query = '';
-                header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php");
+                header("Refresh:0; url=http://localhost/app/phpestaciones/web/clientes/ABMcliente.php");
                 }
             }
         //si es Modificar    
@@ -61,10 +61,10 @@ $codusuario=  $_SESSION["codigo_usuario"];
                     . "cli_ruc='$rucM',cli_mail='$mailM',cli_nro='$nroM',cli_dir='$direccionM',cli_ciu='$ciudadM'"
                     . ", cli_dpto='$departamentoM',estado='$estadoM' WHERE cli_cod=$codigoModif");
             $query = '';
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/clientes/ABMcliente.php");
         }
         //Si es Eliminar
         if(isset($_POST['borrar'])){
             pg_query("update clientes set estado='f' WHERE cli_cod=$codigoElim");
-            header("Refresh:0; url=http://localhost/app/PHPESTACIONES/web/clientes/ABMcliente.php");
+            header("Refresh:0; url=http://localhost/app/phpestaciones/web/clientes/ABMcliente.php");
 	}
