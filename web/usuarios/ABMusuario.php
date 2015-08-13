@@ -116,13 +116,14 @@ $catego=  $_SESSION["categoria_usuario"];
                                             <th>Apellido</th>
                                             <th>Username</th>
                                             <th>Password</th>
+                                            <th>Categoria</th>
                                             <th>Estado</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                     <?php
-                    $query = "select * from usuarios;";
+                    $query = "select * from usuarios u,categorias cat where u.cat_cod=cat.cat_cod;";
                     $result = pg_query($query) or die ("Error al realizar la consulta");
                     while($row1 = pg_fetch_array($result))
                     {
@@ -133,6 +134,7 @@ $catego=  $_SESSION["categoria_usuario"];
                         echo "<td>".$row1["usu_ape"]."</td>";
                         echo "<td>".$row1["usu_username"]."</td>";
                         echo "<td>".$row1["usu_pass"]."</td>";
+                        echo "<td>".$row1["cat_nom"]."</td>";
                         echo "<td>".$estado."</td>";
                         echo "<td>";?>
                        
