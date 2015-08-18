@@ -37,13 +37,13 @@ $pwd=md5($_REQUEST['clave']);
             $_SESSION["codigo_usuario"] = $row['usu_cod'];
             $_SESSION["categoria_usuario"] = $row['cat_cod'];
             if ($row['cat_cod']==1){
-                 header("Location:http://192.168.0.99/web/PHPESTACIONES/web/menu.php");
+                 header("Location:http://192.168.0.99/web/phpestaciones/web/menu.php");
                  
             }else if($row['cat_cod']==2){
-                header("Location:http://192.168.0.99/web/PHPESTACIONES/web/menu_usuario.php");
+                header("Location:http://192.168.0.99/web/phpestaciones/web/menu_usuario.php");
                  
             
             }else if($row['cat_cod']==3){
-                 header("Location:http://192.168.0.99/web/PHPESTACIONES/web/menu_supervisor.php");
+                 header("Location:http://192.168.0.99/web/phpestaciones/web/menu_supervisor.php");
             }
         }
