@@ -115,16 +115,16 @@ $codusuario=  $_SESSION["codigo_usuario"];
                                         <tr class="success">
                                             <th>Codigo</th>
                                             <th>Cliente</th>
-                                            <th>Direccion</th>
+                                            <th>Fecha Op.</th>
+                                            <th>Dpto.</th>
                                             <th>Ciudad</th>
-                                            <th>Departamento</th>
                                             <th>Distribuidor</th>
                                             <th>Cantidad</th>
                                             <th>Aprob.</th>
                                             <th>Reprob.</th>
-                                            <th>Claus.</th>
-                                            <th>Fecha</th>
+                                            <th>Inhabil.</th>
                                             <th>Usuario</th>
+                                            <th>Fecha</th>
                                             <th>Accion</th>
                                         </tr>
                                     </thead>
@@ -132,7 +132,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
                                     <tbody>
                     <?php
                      if ($catego==1){
-                         $query = "select  reg.reg_cod,cli.cli_nom||' '||cli.cli_ape as cliente,cli.cli_dir,cli.cli_ciu,cli.cli_dpto,dis.dis_nom,reg.reg_cant,
+                         $query = "select  reg.reg_cod,cli.cli_nom||' '||cli.cli_ape as cliente,reg.reg_fechaop,cli.cli_ciu,cli.cli_dpto,dis.dis_nom,reg.reg_cant,
                             reg.reg_aprob,reg.reg_reprob,reg.reg_claus,to_char(reg.reg_fecha,'DD/MM/YYYY') as fecha,
                             usu.usu_nom ||' '||usu.usu_ape as usuario
                             from registros reg, clientes cli, distribuidor dis,usuarios usu
@@ -154,9 +154,9 @@ $codusuario=  $_SESSION["codigo_usuario"];
                     {
                         echo "<tr><td>".$row1["reg_cod"]."</td>";
                         echo "<td>".$row1["cliente"]."</td>";
-                        echo "<td>".$row1["cli_dir"]."</td>";
-                        echo "<td>".$row1["cli_ciu"]."</td>";
+                        echo "<td>".$row1["reg_fechaop"]."</td>";
                         echo "<td>".$row1["cli_dpto"]."</td>";
+                        echo "<td>".$row1["cli_ciu"]."</td>";
                         echo "<td>".$row1["dis_nom"]."</td>";
                         echo "<td>".$row1["reg_cant"]."</td>";
                         echo "<td>".$row1["reg_aprob"]."</td>";
@@ -202,7 +202,12 @@ $codusuario=  $_SESSION["codigo_usuario"];
 				<!-- Modal Body -->
 				<div class="modal-body">
                                     <form  autocomplete="off" class="form-horizontal" name="agregarform" action="../class/ClsRegistros.php" method="post" role="form">
-						
+					<div class="form-group">
+                                            <label  class="col-sm-2 control-label" for="input01">Fecha Operacion</label>
+                                            <div class="col-sm-10">
+                                                 <input type="date" name="txtFechaA" class="form-control" id="txtFechaA" required />
+                                            </div>
+					</div>	
                                        
                                         <div class="form-group">
                                             <label  class="col-sm-2 control-label" for="input01">Cliente</label>

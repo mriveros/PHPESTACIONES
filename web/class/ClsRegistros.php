@@ -17,7 +17,7 @@ $codusuario=  $_SESSION["codigo_usuario"];
     if  (empty($_POST['txtAprobadoA'])){$aprobadoA=0;}else{ $aprobadoA= $_POST['txtAprobadoA'];}
     if  (empty($_POST['txtReprobadoA'])){$reprobadoA=0;}else{ $reprobadoA= $_POST['txtReprobadoA'];}
     if  (empty($_POST['txtClausuradoA'])){$clausuradoA=0;}else{ $clausuradoA= $_POST['txtClausuradoA'];}
-    
+    if  (empty($_POST['txtFechaA'])){$fechaA=0;}else{ $fechaA= $_POST['txtFechaA'];}
     
     //Datos del Form Modificar
     if  (empty($_POST['txtCodigo'])){$codigoModif=0;}else{$codigoModif=$_POST['txtCodigo'];}
@@ -34,8 +34,8 @@ $codusuario=  $_SESSION["codigo_usuario"];
         if(isset($_POST['agregar'])){
                       
                 //se define el Query   
-                $query = "INSERT INTO registros(cli_cod,dis_cod,reg_cant,reg_aprob,reg_reprob,reg_claus,reg_fecha,estado,usu_cod) "
-                        . "VALUES ('$clienteA','$distribuidorA',$cantidadA,$aprobadoA,$reprobadoA,$clausuradoA,now(),'t',$codusuario);";
+                $query = "INSERT INTO registros(cli_cod,dis_cod,reg_cant,reg_aprob,reg_reprob,reg_claus,reg_fecha,estado,usu_cod,reg_fechaop) "
+                        . "VALUES ('$clienteA','$distribuidorA',$cantidadA,$aprobadoA,$reprobadoA,$clausuradoA,now(),'t',$codusuario,'$fechaA');";
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $query = '';
