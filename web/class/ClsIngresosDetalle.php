@@ -38,7 +38,7 @@
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
             }    
                 $query = '';
-                header("Refresh:0; url=http://localhost/app/phpestaciones/web/ingresos/IngDetalle.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpestaciones/web/ingresos/IngDetalle.php");
              
                 }
         //si es Modificar    
@@ -48,10 +48,10 @@
                     . "WHERE ins_cod=$codigoModif");
             
              $query = '';
-           header("Refresh:0; url=http://localhost/app/phpestaciones/web/ingresos/IngDetalle.php");
+           header("Refresh:0; url=http://192.168.0.99/web/phpestaciones/web/ingresos/IngDetalle.php");
         }
         //Si es Eliminar
         if(isset($_POST['borrar'])){
             pg_query("delete ingreso_detalle  WHERE ing_coddet=$codigoElim");
-           header("Refresh:0; url=http://localhost/app/phpestaciones/web/ingresos/IngDetalle.php");
+           header("Refresh:0; url=http://192.168.0.99/web/phpestaciones/web/ingresos/IngDetalle.php");
 	}

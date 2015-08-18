@@ -77,12 +77,12 @@
                 $nafta95,$kerosene,$turbo,$avigas,$fueloil,$alcohol,$cantPrecinto,$precio,$codprecintador,
                 $codencargado,'$transportista',now(),$codusuario,'t');";
                $ejecucion = pg_query($query)or die('<script type="text/javascript">alert("Error al guardar datos..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //OBTENER EL ULTIMO CODIGO Y CARGAR EL DETALLE
                $query = "select max(prec_cod) as prec_cod from precintado;";
                $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el ultimo codigo!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codigoPrecintado=$row[0];
@@ -92,7 +92,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto1 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -100,12 +100,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto1,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -114,7 +114,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto2 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -122,12 +122,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto2,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -136,7 +136,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto3 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -144,12 +144,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto3,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -158,7 +158,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto4 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -166,12 +166,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto4,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -180,7 +180,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto5 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -188,12 +188,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto5,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -202,7 +202,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto6 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -210,12 +210,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto6,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -224,7 +224,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto7 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -232,12 +232,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto7,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -246,7 +246,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto8 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -254,12 +254,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto8,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -268,7 +268,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto9 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -276,12 +276,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto9,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -291,7 +291,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto10 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -299,12 +299,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nr,prec_activoo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto10,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -313,7 +313,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto11 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -321,12 +321,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto11,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -335,7 +335,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto12 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -343,12 +343,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto12,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -357,7 +357,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto13 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -365,12 +365,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto13,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -379,7 +379,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto14 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -387,12 +387,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto14,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -401,7 +401,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto15 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -409,12 +409,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto15,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -423,7 +423,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto16 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -431,12 +431,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto16,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -445,7 +445,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto17 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -453,12 +453,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto17,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -467,7 +467,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto18 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -475,12 +475,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto18,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -489,7 +489,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto19 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -497,12 +497,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto19,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -511,7 +511,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto20 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -519,12 +519,12 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto20,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
@@ -533,7 +533,7 @@
                 //OBTENEMOS EL CODIGO DE PRECINTO    
                 $query = "select pre_cod from precinto where pre_nro=$precinto21 and pre_activo='t'";
                 $result = pg_query($query)or die('<script type="text/javascript">alert("Error al obtener el codigo de precinto!!..! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 $row=pg_fetch_row($result);
                 $codprecinto=$row[0];
@@ -541,21 +541,21 @@
                 $query="insert into precintado_detalle(prec_cod,pre_cod,pre_nro,prec_activo) "
                         . "values($codigoPrecintado,$codprecinto,$precinto21,'t')";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al cargar detalle! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                 //ANULAMOS EL CODIGO DE PRECINTO DE LA TABLA PRECINTO
                  $query="update precinto set pre_activo='f' where pre_cod=$codprecinto";
                  $result = pg_query($query)or die('<script type="text/javascript">alert("Error al desactivar el Precinto! :( ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
                  
                 }
                 
                 
                 echo ('<script type="text/javascript">alert("Datos Cargados Exitosamente!! :) ");'
-               . ' window.location="http://localhost/app/PhpPrecinto/precintado/index.php";'
+               . ' window.location="http://192.168.0.99/web/PhpPrecinto/precintado/index.php";'
                . '</script>');
-                header("Refresh:0; url=http://localhost/app/PhpPrecinto/precintado/index.php");
+                header("Refresh:0; url=http://192.168.0.99/web/PhpPrecinto/precintado/index.php");
                
          }
         

@@ -1,5 +1,5 @@
 <?php 
 	session_start(); 
 	session_destroy(); 
-	header("Location:http://localhost/app/PHPESTACIONES/login/acceso.html");
+	header("Location:http://192.168.0.99/web/PHPESTACIONES/login/acceso.html");
 ?>
