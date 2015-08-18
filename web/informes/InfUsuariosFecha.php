@@ -49,7 +49,7 @@ function Header()
     if  (empty($_POST['txtUsuario'])){$codusuario='';}else{ $codusuario = $_POST['txtUsuario'];}
     if  (empty($_POST['txtDesdeFecha'])){$desde='';}else{ $desde= $_POST['txtDesdeFecha'];}
     if  (empty($_POST['txtHastaFecha'])){$hasta='';}else{ $hasta= $_POST['txtHastaFecha'];}
-    $conectate=pg_connect("host=localhost port=5434 dbname=estaciones user=postgres password=postgres"
+    $conectate=pg_connect("host=192.168.0.99 port=5432 dbname=estaciones user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
     $consulta=pg_exec($conectate,"select usu_nom ||' '|| usu_ape as usuario from usuarios where usu_cod=$codusuario");
     $usuario=pg_result($consulta,0,'usuario');
@@ -92,7 +92,7 @@ $i=0;
 $pdf->SetFont('Arial','',10);
 
 //------------------------QUERY and data cargue y se reciben los datos-----------
-$conectate=pg_connect("host=localhost port=5434 dbname=estaciones user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=estaciones user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,"select reg.reg_cant,reg.reg_aprob, reg.reg_reprob, 
 reg.reg_reprob,reg.reg_claus,cli.cli_nom||' '||cli.cli_ape as cliente,

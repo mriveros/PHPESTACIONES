@@ -83,7 +83,7 @@ $i=0;
 $pdf->SetFont('Arial','',10);
 
 //------------------------QUERY and data cargue y se reciben los datos-----------
-$conectate=pg_connect("host=localhost port=5434 dbname=estaciones user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=estaciones user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,"select sum(reg.reg_cant) as cantidad,sum(reg.reg_aprob)as aprobado, sum(reg.reg_reprob) as reprobado, 
 sum(reg.reg_claus) as clausurado
